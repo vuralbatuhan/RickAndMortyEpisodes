@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Pressable, TextInput } from 'react-native';
 import { fetchEpisode, fetchCharacter } from '../api/api';
 import CharacterCard from '../components/CharacterCard';
+import styles from '../styles/EpisodeDetailStyle';
 
 const EpisodeDetail = ({ route, navigation }) => {
     const { episodeId } = route.params;
@@ -66,35 +67,5 @@ const EpisodeDetail = ({ route, navigation }) => {
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    episodeName: {
-        fontSize: 24, 
-        fontWeight: 'bold'
-    },
-    searchAll: {
-        marginBottom: 16, 
-        padding: 8, 
-        borderColor: '#ccc', 
-        borderWidth: 3, 
-        borderRadius: 4 
-    },
-    bottomButton: {
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        borderRadius: 4,
-        elevation: 3,
-        backgroundColor: 'green',
-    },
-    buttonText: {
-        fontSize: 16,
-        lineHeight: 21,
-        fontWeight: 'bold',
-        letterSpacing: 0.25,
-        color: 'white',
-      },
-});
 
 export default EpisodeDetail;
